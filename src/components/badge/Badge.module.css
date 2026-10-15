@@ -1,0 +1,51 @@
+/*
+ * badge — Timeless-DS Nuek set 1783:242 (Data Display 113:357).
+ * Live cells: Estado=Success | Error | Warning | Info | Alternative.
+ *
+ * Padding 4px / 12px is a Figma exception. Foundations has no
+ * non-responsive spacing token for fixed-size internals. Do not bind
+ * --spacing-padding-button-default or other viewport spacing tokens.
+ *
+ * Live Success (1783:214) currently has 0 horizontal padding; the other
+ * four cells use 12px. This component applies 4 / 12 on all five so the
+ * public API stays consistent. Flag the Success cell in Figma if the
+ * 0px inset is intentional.
+ *
+ * Line-height 1.3 is the live Dev Mode value. There is no
+ * --line-height-label-secondary. Do not invent one, and do not reuse
+ * --line-height-label-2 just because it happens to be 130%.
+ */
+
+.root {
+  display: inline-flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-label-secondary);
+  letter-spacing: var(--letter-spacing-label-secondary);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.success {
+  color: var(--color-feedback-content-label-success);
+}
+
+.error {
+  color: var(--color-feedback-content-label-error);
+}
+
+.warning {
+  color: var(--color-feedback-content-label-warning);
+}
+
+.info {
+  color: var(--color-feedback-content-label-info);
+}
+
+.alternative {
+  color: var(--color-feedback-content-label-alternative);
+}
