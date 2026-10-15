@@ -1,10 +1,13 @@
 /**
  * Timeless Design System — CSS Custom Properties
- * Generated from Figma (Timeless-DS Nuek / Foundations library) on 2026-08-13.
+ * Generated from Figma Foundations (mR3rHV1J4ixT7SIsD9Bizz) on 2026-10-15.
  * Do not hand-edit color/radius/spacing/typography values — regenerate from Figma tokens.json instead.
  *
  * Theme: default export is Dark (the file's native/primary theme).
  * Add data-theme="light" on <html> or a parent element to switch.
+ *
+ * Line-height: Foundations semanticTypography now aliases every scale step to
+ * the primitive lineHeight/130 (PERCENT). Values are emitted as 130%, not px.
  */
 
 :root,
@@ -33,12 +36,12 @@
   --color-content-interactive-input-disabled: #929292;
   --color-content-interactive-input-active: #121212;
   --color-content-interactive-input-icon: #AB5BFF;
-  --color-background-static-page-primary: #121212;
+  --color-background-static-page-primary: #000000;
   --color-background-static-scrim-subtle: #1212121A;
   --color-background-static-scrim-medium: #12121280;
   --color-background-static-scrim-strong: #121212CC;
-  --color-background-static-layer-level-1-default: #000000;
-  --color-background-static-layer-level-2-default: #161616;
+  --color-background-static-layer-level-1-default: #121212;
+  --color-background-static-layer-level-2-default: #181818;
   --color-background-static-layer-level-3-default: #202020;
   --color-background-static-texture-glass: #FFFFFF1A;
   --color-background-interactive-focusring-primary: #AB5BFF;
@@ -137,12 +140,16 @@
   --radius-2xl: 40px;
   --radius-3xl: 48px;
   --radius-full: 999px;
+
   --border-width-none: 0px;
   --border-width-thin: 1px;
   --border-width-medium: 2px;
   --border-width-thick: 3px;
 
   --font-family-base: 'Saans', sans-serif;
+  --font-family-primary: 'Saans', sans-serif;
+  --font-family-secondary: Arial, sans-serif;
+  --font-family-tertiary: 'Fira Mono', monospace;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-size-heading-1: 48px;
@@ -159,18 +166,18 @@
   --font-size-display-1: 80px;
   --font-size-display-2: 64px;
   --font-size-display-3: 56px;
-  --line-height-heading-1: 72px;
-  --line-height-heading-2: 64px;
-  --line-height-heading-3: 56px;
-  --line-height-body-1: 40px;
-  --line-height-body-2: 32px;
-  --line-height-body-3: 24px;
-  --line-height-label-1: 32px;
-  --line-height-label-2: 24px;
-  --line-height-label-3: 16px;
-  --line-height-display-1: 96px;
-  --line-height-display-2: 80px;
-  --line-height-display-3: 72px;
+  --line-height-heading-1: 130%;
+  --line-height-heading-2: 130%;
+  --line-height-heading-3: 130%;
+  --line-height-body-1: 130%;
+  --line-height-body-2: 130%;
+  --line-height-body-3: 130%;
+  --line-height-label-1: 130%;
+  --line-height-label-2: 130%;
+  --line-height-label-3: 130%;
+  --line-height-display-1: 130%;
+  --line-height-display-2: 130%;
+  --line-height-display-3: 130%;
   --letter-spacing-heading-primary: -1px;
   --letter-spacing-heading-secondary: 0px;
   --letter-spacing-heading-tertiary: 0.3px;
@@ -219,13 +226,13 @@
   --color-content-interactive-input-disabled: #454545;
   --color-content-interactive-input-active: #F2F2F2;
   --color-content-interactive-input-icon: #7400ED;
-  --color-background-static-page-primary: #F2F2F2;
+  --color-background-static-page-primary: #FFFFFF;
   --color-background-static-scrim-subtle: #1212121A;
   --color-background-static-scrim-medium: #12121280;
   --color-background-static-scrim-strong: #121212CC;
-  --color-background-static-layer-level-1-default: #FFFFFF;
-  --color-background-static-layer-level-2-default: #F8F8F8;
-  --color-background-static-layer-level-3-default: #E8E8E8;
+  --color-background-static-layer-level-1-default: #F2F2F2;
+  --color-background-static-layer-level-2-default: #E8E8E8;
+  --color-background-static-layer-level-3-default: #BFBFBF;
   --color-background-static-texture-glass: #FFFFFF1A;
   --color-background-interactive-focusring-primary: #7400ED;
   --color-background-interactive-checkbox-pressed-primary: #7400ED;
@@ -295,7 +302,7 @@
   --color-chart-sequential-step-2: #8817FF;
   --color-chart-sequential-step-3: #9D3EFF;
   --color-chart-sequential-step-1: #7400ED;
-  --color-chart-sequential-step-5: #D6AFFF;
+  --color-chart-sequential-step-5: #EFE0FF;
   --color-chart-sequential-step-4: #B670FF;
   --color-chart-status-negative: #CA0F30;
   --color-chart-status-neutral: #585858;
@@ -317,7 +324,9 @@
 
 /* Responsive spacing overrides — breakpoints are an assumption based on
    common web conventions (Mobile/Tablet/Desktop/Desktop XL modes in Figma
-   don't carry explicit px boundaries). Adjust to match your actual grid. */
+   don't carry explicit px boundaries). Adjust to match your actual grid.
+   Foundations also has semanticLayouts device widths (375 / 744 / 834 / 1280 / 1440)
+   that were NOT folded into this export (outside the five semantic collections). */
 @media (min-width: 768px) {
   :root {
   --spacing-margin-default: 40px;
